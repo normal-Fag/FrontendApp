@@ -1,1 +1,365 @@
-styles.css
+/*
+
+	Главные цвета: { #1a1b1f - Темный
+									 #edf0f1 - Светлый (#969696 для затемнения)
+									 #ff8fb0 - Розовый
+										};
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+li {
+	text-decoration: none;
+	list-style: none;
+}
+body {
+	font-family: "Roboto";
+}
+h1 {
+	text-align: center;
+	font-size: 28px;
+}
+/* 
+  _______________________________
+ /		    Dark theme	 		/
+/______________________________/
+
+*/
+.dark-bg{
+	background-color: #1a1b1f;
+}
+.dark-bg-text * {
+	font-weight: 500;
+	color: #edf0f1;
+}
+/* 
+  _______________________________
+ /		    Light theme			/
+/______________________________/
+
+*/
+.light-bg{
+	background-color: #edf0f1;
+}
+.light-bg-text * {
+	font-weight: 500;
+	font-size: 16px;
+	color: #24252A;
+}
+/*
+______________________________________________________________________________________________
+
+Navigation (header) styles
+______________________________________________________________________________________________
+
+*/
+.header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0px 10%;
+	border: 1px solid #2e2f36;
+	border-radius: 2px;
+	background-color: #24252A;
+}
+.header_fixed {
+	position: fixed;
+	width: 100%;
+	animation-name: showheader;
+	animation-duration: 1s;
+}
+@keyframes showheader{
+	0% {
+		opacity: 1;
+		top: 0;
+	}
+	100% {
+		opacity: 1;
+		top: 0;
+	}
+}
+/* 
+  _______________________________
+ /		    Logo styles 		/
+/______________________________/
+
+*/
+.nav_logo {
+	width:  256px;
+	height: 64px;
+	cursor: pointer;
+	margin-right: auto;
+}
+.logo_img {
+	width: 64px;
+	height: 64px;
+}
+.logo_img_text {
+	position: absolute;
+	top: 3%;
+	left: 15%;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #edf0f1;
+}
+/* 
+  _______________________________
+ /		 Links header styles 			/
+/______________________________/
+
+*/
+.nav_links {
+	list-style: none;
+}
+.nav_links li {
+	display: inline-block;
+	padding: 0px 20px;
+}
+.nav_links li a {
+	transition: all 0.3s ease 0s;
+}
+.nav_links li a:hover{
+	color: #969696;
+}
+/* 
+  _______________________________
+ /		 Nav_button styles 		/
+/______________________________/
+
+*/
+.nav-button {
+	padding: 9px 25px;
+	background-color: rgba(208, 208, 208, 1.0);
+	color: #24252A;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+	margin-left: 20px;
+	font-size: 16px;
+}
+.nav-button:hover{
+	background-color: rgba(150, 150, 150, 1.0);
+}
+/* 
+______________________________________________________________________________________________
+
+Float columns styles
+______________________________________________________________________________________________
+
+*/
+.conteiner {
+	width: 100%;
+	height: 600px;
+	margin-top: 25px;
+}
+.float_content {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.float-section {
+	width: 33.33%;
+	height: 500px;
+	float: left;
+	margin-top: 25px;
+}
+.section_content {
+	width: 95%;
+	height: 100%;
+	margin: auto;
+	border-radius: 10px;
+	background-color: #000;
+	transition: all 0.3s ease 0s;
+}
+.section_content:hover {
+	transform: translate3d(-10px, -10px,0);
+	background-color: #ff8fb0;
+}
+.section_text{
+	margin-top: 30%;
+	text-align: center;
+	font-size: 28px;
+}
+/*
+______________________________________________________________________________________________
+
+Flex-box columns styles
+______________________________________________________________________________________________
+
+*/
+.flexbox_conteiner {
+	width: 100%;
+	height: 550px;
+	margin-top: 25px;
+}
+.flex_box {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 25px;
+}
+
+.flex_box-item {
+	width: 30%;
+	height: auto;
+	
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+
+	background: #ff8fb0;
+	border-radius: 10px;
+
+	transition: all 0.3s ease 0s;
+}
+
+.flexbox_img {
+	width: 100%;
+	transition: all 0.3s ease 0s;
+}
+.flex_box-item:hover{
+	opacity: 0.9;
+}
+.flex_box-item:hover .flexbox_img{
+	opacity: 0.3;
+	transform: translate3d(-10px, -10px, 0px);
+}
+.flex_box-item:hover .flexbox_img_text{
+	opacity: 1;
+}
+
+.flexbox_img_text {
+	width:100%;
+	opacity: 0;
+
+	color: #FFF;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 2;
+	transform:translate3d(0, -50%, 0);
+
+	transition: opacity .1s linear;
+}
+/*
+______________________________________________________________________________________________
+
+Grid columns
+______________________________________________________________________________________________
+
+*/
+.grid_content {
+	width: 90%;
+	height: 500px;
+
+	display: grid;
+	grid-template: 1fr / 1fr 2fr 1fr;
+
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.grid_item {
+	text-align: center;
+	padding: 20px;
+	color: #24252A;
+	transition: all 0.3s ease 0s;
+}
+.grid_image_pepe_angry{
+	width: 241px;
+	height: 235px;
+}
+.grid_image_pepe-ready {
+	width: 476px;
+	height: 423px;
+	opacity: 1;
+	transition: all 0s ease 0s;
+}
+
+.grid_image_pepe-fight {
+	width: 476px;
+	height: 423px;
+
+	opacity: 0;
+	position: absolute;
+	left: 35%;
+	z-index: 1;
+	transition: all 0.1s ease 0s;
+}
+
+.grid_item:hover {
+	opacity: 0.5;
+}
+.grid_item:hover .grid_image_pepe-ready{
+	opacity: 0;
+}
+.grid_item:hover .grid_image_pepe-fight{
+	transform: scale3d(1.5, 1.5, 1.0);
+	opacity: 0.8;
+}
+.grid_item_text{
+	margin-top: 30%;
+	text-align: center;
+	font-size: 28px;
+	color: #fff;
+}
+
+/*
+______________________________________________________________________________________________
+
+Footer
+______________________________________________________________________________________________
+
+*/
+.footer {
+	width: 100%;
+	height: auto;
+	padding: 50px 0px;
+	margin-top: 25px;
+	background-color: #ff8fb0;
+}
+.footer-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+.footer-img {
+	width: 86px;
+	height: 86px;
+}
+.footer_text * {
+	font-size: 18px;
+	font-weight:500;
+	color: #1a1b1f;
+}
+.nav_links_footer {
+	list-style: none;
+}
+.nav_links_footer li {
+	display: inline-block;
+	padding: 0px 20px;
+}
+.nav_links_footer li a {
+	transition: all 0.3s ease 0s;
+}
+.nav_links_footer li a:hover{
+	color: #edf0f1;
+}
